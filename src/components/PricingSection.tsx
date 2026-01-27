@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -33,6 +34,7 @@ const plans = [
 ];
 
 export function PricingSection() {
+    const navigate = useNavigate();
     return (
         <section id="pricing" className="py-24 px-6 bg-background">
             <div className="max-w-7xl mx-auto">
@@ -82,6 +84,7 @@ export function PricingSection() {
                                 variant={plan.popular ? "default" : "outline"}
                                 className="w-full"
                                 size="lg"
+                                onClick={() => navigate("/login")}
                             >
                                 {plan.cta}
                             </Button>
